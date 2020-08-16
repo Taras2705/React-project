@@ -1,0 +1,25 @@
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.item {
+    color: white;
+
+
+}
+.button{
+    background-color: #17191c;
+    margin-left: 20px;
+}
+.like{
+    width: 20px;
+    height: 20px;
+
+
+}
+
