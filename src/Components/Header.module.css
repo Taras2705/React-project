@@ -1,0 +1,12 @@
+.header{
+    height: 200px;
+    background-image: url("https://i.pcmag.com/imagery/articles/06A0yVqekWQSdRVJzFou1Ht-22.fit_scale.size_950x532.v1575682800.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
