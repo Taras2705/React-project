@@ -1,16 +1,20 @@
 
 .nav{
     background-color: black;
-
     width: 35%;
 }
 .item{
     margin-left: 20px;
     margin-top: 10px;
+}
+.item a{
+
     font-size: 20px;
     color: white;
+    text-decoration: none;
 
 }
-.active{
+ a.activeLink{
     color: yellow;
+     list-style-type: none;
 }
