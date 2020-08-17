@@ -4,16 +4,20 @@
     justify-content: space-between;
 }
 .dialogItem{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.dialogItem a{
     width: 20%;
     color: white;
     font-size: 16px;
-    margin-top: 10px;
-    margin-left: 15px;
+    text-decoration: none;
+
 }
 .dialog{
     margin-bottom:5px;
 }
-.active{
+.active a{
     color: darkorange;
 }
 .messages{
