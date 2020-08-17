@@ -13,7 +13,10 @@
 .button{
     background-color: #17191c;
     margin-left: 20px;
+    border: none;
+
 }
+
 .like{
     width: 20px;
     height: 20px;

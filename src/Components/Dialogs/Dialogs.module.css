@@ -1,4 +1,55 @@
-.dialog{
+
+.dialogs{
+    display: flex;
+    justify-content: space-between;
+}
+.dialogItem{
+    width: 20%;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.dialog{
+    margin-bottom:5px;
+}
+.active{
+    color: darkorange;
+}
+.messages{
+    width: 80%;
+    color: white;
+    font-size: 16px;
+    padding-top: 5px;
+    margin-left: 15px;
+}
+.messageTo{
+    margin-top: 10px;
+    margin-left: 2px;
+    width: 250px;
+    height: 40px;
+    resize: none;
+}
+.message{
+    margin-bottom: 4px;
+}
+.sent{
+    margin-top: 10px;
+    background-color:#f59c20;
+    color: white;
+    margin-left: 2px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius:4px;
+    margin-right: 10px;
+}
+.sent:hover{
+    color: #f59c20;
+    background-color: white;
+    border: 2px solid #f59c20;
+
+
+
 }
