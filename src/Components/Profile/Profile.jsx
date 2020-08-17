@@ -1,12 +1,12 @@
 import React from "react";
-import MyPosts from "./Posts/NewPost/MyPosts";
+import MyPosts from "./Posts/MyPosts";
 import s from "./Profile.module.css"
+import ContentImg from "./ContentImg/ContnentImg";
 
 const Profile = () => {
     return (
         <div className={s.content}>
-            <img className={s.contentImg} alt=""
-                 src="https://bk.asia-city.com/sites/default/files/u143592/webp.net-compress-image_38_0.jpg"/>
+             <ContentImg/>
              <MyPosts/>
         </div>
 

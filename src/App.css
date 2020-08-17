@@ -2,5 +2,10 @@
     display: flex;
     justify-content: space-between;
 }
+.app-wrapper-content{
+    width: 65%;
+    background-color: #17191c;
+
+}
 
 
