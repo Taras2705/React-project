@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+let posts = [
+    {id: 1, message: 'Hi.How are you?', likesCount: 15},
+    {id: 2, message: 'Its my first post', likesCount: 126},
+
+];
 ReactDOM.render(
   <React.StrictMode>
     <App />
