@@ -18,31 +18,28 @@ const MessageItem = (props) => {
 };
 
 const Dialogs = (props) => {
-    let DialogsData = [
+    let dialogs = [
         {id: 1, name: 'Ivan'},
         {id: 2, name: 'Petro'},
         {id: 3, name: 'Oleksandr'},
-        {id: 4, name: 'Taras'}
+        {id: 4, name: 'Taras'},
+        {id: 4, name: 'Stepan'}
     ];
-    let MessageData=[
+    let messages=[
         {id: 1,message: 'Hi hi'},
         {id: 2, message: 'Hi how are you?'},
         {id: 3, message: 'Hi.Nice to meet you'},
 
     ];
+    let dialogsElements=dialogs.map(d=> <DialogItem name={d.name} id={d.id}/>);
+    let messageElements=messages.map(m=> <MessageItem message={m.message}/>);
     return (
         <div className={s.dialogs}>
             <div className={s.dialogItem}>
-                <DialogItem name={DialogsData[0].name} id={DialogsData[0].id}/>
-                <DialogItem name={DialogsData[1].name} id={DialogsData[1].id}/>
-                <DialogItem name={DialogsData[2].name} id={DialogsData[2].id}/>
-                <DialogItem name={DialogsData[3].name} id={DialogsData[3].id}/>
-
+                {dialogsElements}
             </div>
             <div className={s.messages}>
-                <MessageItem message={MessageData[0].message}/>
-                <MessageItem message={MessageData[1].message}/>
-                <MessageItem message={MessageData[2].message}/>
+                {messageElements}
                 <div>
                     <textarea className={s.messageTo}></textarea>
                 </div>

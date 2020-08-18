@@ -4,17 +4,17 @@ import Post from "./Post/Post";
 import NewPost from "./NewPost/NewPost";
 
 const MyPosts = (props) => {
-    let PostData = [
+    let posts = [
         {id: 1, message: 'Hi.How are you?', likesCount: 15},
         {id: 2, message: 'Its my first post', likesCount: 126},
 
-    ]
+    ];
+    let postsElements = posts.map(p => <Post message={p.message} likeCount={p.likesCount}/>);
     return (
         <div>
             <NewPost/>
             <div className={s.posts}>
-                <Post message={PostData[0].message} likeCount={PostData[0].likesCount}/>
-                <Post message={PostData[1].message} likeCount={PostData[1].likesCount}/>
+                {postsElements}
             </div>
         </div>
 
