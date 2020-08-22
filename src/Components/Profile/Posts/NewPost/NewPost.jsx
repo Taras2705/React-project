@@ -3,12 +3,17 @@ import s from "./NewPost.module.css";
 
 
 const NewPost=()=>{
+    let newPostElement= React.createRef()
+    let addPost=()=>{
+       let text=newPostElement.current.value;
+       alert(text)
+    };
     return(
         <div>
-                <textarea className={s.newPost} placeholder="new post">
+                <textarea ref={newPostElement}  className={s.newPost} placeholder="new post">
                 </textarea>
             <div>
-                <button className={s.button}>Add Post</button>
+                <button onClick={addPost} className={s.button}>Add Post</button>
                 <button className={s.button}>Delete post</button>
             </div>
         </div>

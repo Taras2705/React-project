@@ -5,7 +5,12 @@ import MessageItem from "./MessageItem/MessageItem";
 
 
 const Dialogs = (props) => {
+        let newMessage=React.createRef();
+        let sentMessage=()=>{
+            let message=newMessage.current.value;
+            alert(message)
 
+        };
         let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
         let messageElements = props.state.messages.map(m => <MessageItem message={m.message}/>);
         return (
@@ -16,10 +21,10 @@ const Dialogs = (props) => {
                 <div className={s.messages}>
                     {messageElements}
                     <div>
-                        <textarea className={s.messageTo}></textarea>
+                        <textarea ref={newMessage} className={s.messageTo}></textarea>
                     </div>
                     <div className={s.buttons}>
-                        <button className={s.sent}>Sent message</button>
+                        <button onClick={sentMessage} className={s.sent}>Sent message</button>
                         <button className={s.sent}>Attache folder</button>
                     </div>
                 </div>
