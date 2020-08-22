@@ -8,7 +8,7 @@ const MyPosts = (props) => {
     let postsElements = props.posts.map(p => <Post message={p.message} likeCount={p.likesCount}/>);
     return (
         <div>
-            <NewPost/>
+            <NewPost addPost={props.addPost}/>
             <div className={s.posts}>
                 {postsElements}
             </div>

@@ -2,12 +2,15 @@ import React from "react";
 import s from "./NewPost.module.css";
 
 
-const NewPost=()=>{
-    let newPostElement= React.createRef()
+const NewPost=(props)=>{
+    let newPostElement= React.createRef();
+
     let addPost=()=>{
+        debugger;
        let text=newPostElement.current.value;
-       alert(text)
+       props.addPost(text)
     };
+
     return(
         <div>
                 <textarea ref={newPostElement}  className={s.newPost} placeholder="new post">
