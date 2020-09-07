@@ -1,3 +1,5 @@
+const Add_Post = 'ADD-POST';
+const Update_New_Post_Text = 'UPDATE-NEW-POST-TEXT';
 let store={
     _state:{
         profilePage:{
@@ -49,11 +51,13 @@ let store={
             this._state.profilePage.newPostText=action.newText;
             this._callSubscriber(this._state);
         }
-    },
-
-
-
+    }
 };
+export const AddPostActionCreator=()=>({type: Add_Post});
+export const UpdateNewPostTextActionCreator=(text)=>({
+    type: Update_New_Post_Text, newText: text
+});
+
 
 export default store;
 
