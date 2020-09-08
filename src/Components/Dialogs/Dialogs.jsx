@@ -2,17 +2,24 @@ import React from "react";
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
+import {sendMessageCreator, updateNewPostBodyCreator} from "../../Redux/state";
 
 
 const Dialogs = (props) => {
-        let newMessage=React.createRef();
-        let sentMessage=()=>{
-            let message=newMessage.current.value;
-            alert(message)
 
-        };
-        let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-        let messageElements = props.state.messages.map(m => <MessageItem message={m.message}/>);
+        let state=props.store.getState().dialogsPage;
+
+        let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+        let messageElements = state.messages.map(m => <MessageItem message={m.message}/>);
+        let newMessageBody = state.newMassageBody;
+
+    let OnSentMessageClick=()=>{
+        props.store.dispatch(sendMessageCreator());
+    };
+    let onNewMessageChange=(e)=>{
+        let body= e.target.value;
+        props.store.dispatch(updateNewPostBodyCreator(body))
+    };
         return (
             <div className={s.dialogs}>
                 <div className={s.dialogItem}>
@@ -21,10 +28,11 @@ const Dialogs = (props) => {
                 <div className={s.messages}>
                     {messageElements}
                     <div>
-                        <textarea ref={newMessage} className={s.messageTo}></textarea>
+                        <textarea value={newMessageBody} onChange={onNewMessageChange} className={s.messageTo}
+                                  placeholder='Enter your message'/>
                     </div>
                     <div className={s.buttons}>
-                        <button onClick={sentMessage} className={s.sent}>Sent message</button>
+                        <button onClick={OnSentMessageClick} className={s.sent}>Send message</button>
                         <button className={s.sent}>Attache folder</button>
                     </div>
                 </div>

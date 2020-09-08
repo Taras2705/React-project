@@ -1,5 +1,7 @@
 const Add_Post = 'ADD-POST';
 const Update_New_Post_Text = 'UPDATE-NEW-POST-TEXT';
+const Update_New_Message_Body = 'UPDATE-NEW-MESSAGE-BODY';
+const Send_Message='SEND-MESSAGE';
 let store={
     _state:{
         profilePage:{
@@ -8,7 +10,7 @@ let store={
                 {id: 2, message: 'Its my first post', likesCount: 126},
 
             ],
-                newPostText: 'it-kamasutra.com'
+                newPostText: ''
         },
         dialogsPage:{
             dialogs : [
@@ -22,7 +24,8 @@ let store={
                 {id: 1, message: 'Hi hi'},
                 {id: 2, message: 'Hi how are you?'},
                 {id: 3, message: 'Hi.Nice to meet you'},
-            ]
+            ],
+               newMassageBody:'',
         }
     },
     _callSubscriber(){
@@ -51,11 +54,26 @@ let store={
             this._state.profilePage.newPostText=action.newText;
             this._callSubscriber(this._state);
         }
+        else if(action.type ==='UPDATE-NEW-MESSAGE-BODY'){
+            this._state.dialogsPage.newMassageBody=action.body;
+            this._callSubscriber(this._state)
+        }
+        else if(action.type ==='SEND-MESSAGE'){
+            let body= this._state.dialogsPage.newMassageBody;
+            this._state.dialogsPage.messages.push({id: 4, message: body});
+            this._state.dialogsPage.newMassageBody='';
+            this._callSubscriber(this._state)
+        }
     }
 };
 export const AddPostActionCreator=()=>({type: Add_Post});
 export const UpdateNewPostTextActionCreator=(text)=>({
     type: Update_New_Post_Text, newText: text
+});
+
+export const sendMessageCreator=()=>({type: Send_Message});
+export const updateNewPostBodyCreator=(body)=>({
+    type: Update_New_Message_Body, body: body
 });
 
 
